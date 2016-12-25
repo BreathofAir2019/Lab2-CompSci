@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Purchase</title>
+<link rel = "stylesheet" type = "text/css" href = "style.css"/>
+</head>
+<body>
+
+<h3>Please Enter Purchase Details Below</h3>
+<div>
+  <form method="POST" action="http://webdevbasics.net/scripts/demo.php " class="form_class">
+    
+	<label for="firstname">First Name &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</label>
+    <input type="text" id="firstname" name="firstname" pattern="[A-Za-z]*" required title="Customer's first name" />
+	<br/>
+	
+	<label>Email &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</label>
+	<input type="email" id="emailAddress" name="emailAddress" title="Customer's email" required />
+	
+	<br/>
+	<label>Company Website &nbsp</label>
+    <input type="url" id="cWebsite" name="cWebsite" required title="Customer's Company Website"/>
+	
+	<br/>
+	<label>Phone Number &nbsp &nbsp &nbsp &nbsp</label>
+	<input type="text" id="phoneNum" name="phoneNum" pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}" required title="Customer's Contact Phone #"/>
+	
+	<br/>
+	<label>Address</label>
+	<br/>
+	<textarea name="address" placeholder="Please enter your address"></textarea>
+	<br/>
+	
+	<label>Customer City of Residence</label>
+	<input type="text" id="city" name="city" pattern="[A-Za-z]*" required title="Customer's Customer's city"/>
+	<br/>
+    <label>State of Residence</label>
+	<select>
+	   <option value="arizona">Arizona</option>
+	   <option value="california">California</option>
+	   <option value="washington">Washington</option>
+	   <option value="denial">Denial</option>
+	</select>
+ 
+    <label><span style="color:red">Zip Code</span></label>
+    <input type="text" id="zip" name="zip" pattern="[0-9]{5}" required title="Customer's zip code"/><br/>
+    
+	<label onload="letterChange()"><span style="color:blue">Create a Username</span></label><br/>
+	<input type="text" id="username" name="username" pattern="[A-Za-z]*" required title="Customer's Username"/><br/>
+	
+	<label><span style="color:green">Make a Password (Uppercase character, Lowercase Character, Number Required)</span></label><br/>
+	<input type="password" id="password" name="password" pattern="^\w*(?=\w*\d)(?=\w*[a-z])(?=\w*[A-Z])\w*$"  title="Requires at least one uppercase letter one lowercase letter, one number"/><br/>
+	
+	<label for="numObjects">Number of Objects Users allowed to Interact With (1-20 items)</label><br/>
+	<input type="number" id="numObjects" name="numObjects" min="1" max="20" step="1" title="Object numbers"/>
+    
+	
+    <label title="Must have at least small, medium, and large">Update Your Object Size</label>
+	<br>
+	<input type="radio" name="sizeObjects" value="small"/>
+	<span style="font-size:10px">Small</span><br/>
+	<input type="radio" name="sizeObjects" value="medium"/>	
+    <span style="font-size:17px">Medium</span><br/>
+	<input type="radio" name="sizeObjects" value="Large"/>
+	<span style="font-size:25px">Large</span><br/>
+  
+    <input type="submit" value="Submit" onclick="letterChange()">
+  </form>
+</div>
+</body>
+</html>
